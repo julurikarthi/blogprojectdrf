@@ -34,7 +34,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('swagger/schema/', schema_view.with_ui('swagger', cache_timeout=0), name="swagger-schema"),
-    path('api/data/', views.data_view, name='api-data'),
 
 ]
 if settings.DEBUG:
