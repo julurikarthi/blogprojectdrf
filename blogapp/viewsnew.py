@@ -7,3 +7,4 @@ def data_view(request):
         "data": {"id": 1, "name": "Sample Item"}
     }
     return JsonResponse(data)
+
