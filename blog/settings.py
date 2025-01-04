@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Account',
     'blogapp',  
     'drf_yasg',
+    'api',
 ]
 
 MIDDLEWARE = [
