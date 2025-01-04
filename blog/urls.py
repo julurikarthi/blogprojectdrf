@@ -19,7 +19,7 @@ from django.conf import settings # new
 from  django.conf.urls.static import static #new
 from drf_yasg import openapi #new foe swagger
 from drf_yasg.views import get_schema_view as swagger_get_schema_view #new foe swagger
-
+from blogapp import views
 
 schema_view = swagger_get_schema_view(
     openapi.Info(
@@ -34,6 +34,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('swagger/schema/', schema_view.with_ui('swagger', cache_timeout=0), name="swagger-schema"),
+    path('api/data/', views.data_view, name='api-data'),
 
 ]
 if settings.DEBUG:
