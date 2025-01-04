@@ -9,8 +9,18 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.http import JsonResponse
+
 
 # This class is used to fetch all the blogs from the database
+
+def data_view(request):
+    data = {
+        "message": "Hello, World!",
+        "status": "success",
+        "data": {"id": 1, "name": "Sample Item"}
+    }
+    return JsonResponse(data)
 
 class PublicBlogView(APIView):
     def get(self, request):
